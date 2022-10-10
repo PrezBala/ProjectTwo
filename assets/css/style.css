@@ -20,8 +20,6 @@
   
   .header {
     font-size: 3em;
-    color: hsl(290, 46%, 37%);
-    background: #000000;
     text-align: center;
     height: 2em;
     display: flex;
@@ -69,7 +67,6 @@
   
   body {
     margin: 0;
-
     font-family: 'Barlow Semi Condensed', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
@@ -77,6 +74,159 @@
     align-items: center;
     min-height: 100vh;
     position: relative;
-    background: radial-gradient(circle at top, hsl(290, 46%, 37%), hsl(270, 49%, 15%));
+    background: radial-gradient(ellipse at center, hsl(210, 6%, 93%), hsl(192, 70%, 59%));
+}
+ /* User choice */
+
+ .user-choice {
+
+    background-size: 340px;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    height: 467px;
+}
+
+.game-card {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 145px;
+   height: 150px;
+   border-radius: 50%;
+   position: relative;
+   cursor: pointer;
+   position: absolute;   
+}
+
+.game-card img {
+    position: relative;
+    z-index: 2;
+}
+
+.game-card:before {
+    content: '';
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    box-shadow: inset 0 3px 5px hsl(229, 25%, 31%);
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: 1;
+    transition: background .3s ease, box-shadow .3s ease;
+}
+
+.game-card:hover:before {
+   background: rgba(255, 255, 255, 0);
+   box-shadow: none;
+}
+
+.game-card.scissors {
+   background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+   box-shadow: 0px 6px 0px 0px hsl(28, 75%, 44%);
+   top: 0;
+   left: 278px;
+}
+
+.game-card.paper {
+   background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+   box-shadow: 0px 6px 0px 0px hsl(229, 62%, 34%);
+   top: 130px;
+   right: 115px;
+}
+
+.game-card.rock {
+   background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+   box-shadow: 0px 6px 0px 0px hsl(343, 70%, 30%);
+   bottom: 0;
+   right: 178px;
+}
+
+.game-card.lizard {
+   background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+   box-shadow: 0px 6px 0px 0px hsl(259, 48%, 38%);
+   bottom: 0;
+   left: 180px;
+}
+
+.game-card.spock {
+   background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+   box-shadow: 0px 6px 0px 0px hsl(197, 54%, 36%);
+   top: 130px;
+   left: 115px;
+}
+/* Modal section */
+
+.modal.active, .modal-bg.active {
+    display: block;
+}
+
+.rules-btn {
+   border: 1px solid hsl(217, 16%, 45%);
+   padding: 5px 25px;
+   border-radius: 5px;
+   position: absolute;
+   right: 20px;
+   bottom: 100px;
+   cursor: pointer;
+   color: #fff;
+   background: linear-gradient(to left, transparent 50%, #fff 50%);
+   background-size: 250% 100%;
+   background-position: right bottom;
+   transition: background-position .3s ease-out, color .3s ease-out;
+   text-transform: uppercase;
+
+}
+
+.rules-btn:hover {
+   background-position: left bottom;
+   color: hsl(214, 47%, 23%);
+}
+
+.modal-bg {
+   display: none;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 2;
+   background: rgba(0, 0, 0, 50%);
+}
+
+.modal {
+   display: none;
+   position: absolute;
+   z-index: 3;
+   background: #ffffff;
+   width: 100%;
+   max-width: 500px;
+   padding: 40px 30px 30px;
+   border-radius: 10px;
+   top: 40px;
+}
+
+.modal .close {
+   position: absolute;
+   right: 30px;
+   cursor: pointer;
+}
+
+.modal .title {
+   color: hsl(229, 25%, 31%);
+   font-weight: 600;
+   font-size: 35px;
+}
+
+.modal .content {
+   text-align: center;
+}
+
+.attribution {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 20px;
+   text-align: center;
 }
   

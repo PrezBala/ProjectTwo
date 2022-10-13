@@ -87,81 +87,14 @@
     height: 467px;
 }
 
-.game-card {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 145px;
-   height: 150px;
-   border-radius: 50%;
-   position: relative;
-   cursor: pointer;
-   position: absolute;   
-}
-
-.game-card img {
-    position: relative;
-    z-index: 2;
-}
-
-.game-card:before {
-    content: '';
-    width: 115px;
-    height: 115px;
-    border-radius: 50%;
-    box-shadow: inset 0 3px 5px hsl(229, 25%, 31%);
-    background: rgba(255, 255, 255, 1);
-    position: absolute;
-    z-index: 1;
-    transition: background .3s ease, box-shadow .3s ease;
-}
-
-.game-card:hover:before {
-   background: rgba(255, 255, 255, 0);
-   box-shadow: none;
-}
-
-.game-card.scissors {
-   background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-   box-shadow: 0px 6px 0px 0px hsl(28, 75%, 44%);
-   top: 0;
-   left: 278px;
-}
-
-.game-card.paper {
-   background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-   box-shadow: 0px 6px 0px 0px hsl(229, 62%, 34%);
-   top: 130px;
-   right: 115px;
-}
-
-.game-card.rock {
-   background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-   box-shadow: 0px 6px 0px 0px hsl(343, 70%, 30%);
-   bottom: 0;
-   right: 178px;
-}
-
-.game-card.lizard {
-   background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
-   box-shadow: 0px 6px 0px 0px hsl(259, 48%, 38%);
-   bottom: 0;
-   left: 180px;
-}
-
-.game-card.spock {
-   background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
-   box-shadow: 0px 6px 0px 0px hsl(197, 54%, 36%);
-   top: 130px;
-   left: 115px;
-}
 /* Modal section */
 
 .modal.active, .modal-bg.active {
     display: block;
 }
 
-.rules-btn {
+
+.rules-btn, .reset-btn { 
    border: 1px solid hsl(217, 16%, 45%);
    padding: 5px 25px;
    border-radius: 5px;
@@ -183,50 +116,73 @@
    color: hsl(214, 47%, 23%);
 }
 
-.modal-bg {
-   display: none;
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   z-index: 2;
-   background: rgba(0, 0, 0, 50%);
+.rulesImg {
+   width: 50%;
+
 }
 
 .modal {
+   position: fixed;
+   /* Center the text */
+   top: 50%;
+   left: 50%;
+   /* The top left corner is center, to center the whole text we need transform */
+   transform: translate(-50%, -50%);
    display: none;
-   position: absolute;
-   z-index: 3;
-   background: #ffffff;
-   width: 100%;
-   max-width: 500px;
-   padding: 40px 30px 30px;
+   border: 1px solid black;
    border-radius: 10px;
-   top: 40px;
+   z-index: 10;
+   background-color: rgb(250, 250, 250);
+   color: rgb(93, 155, 206);
+   width: 500px;
+   max-width: 60%;
 }
 
-.modal .close {
-   position: absolute;
-   right: 30px;
+.modal.active {
+   display: block;
+}
+
+.modal-header {
+   padding: 10px 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px dashed black;
+}
+
+.modal-header .title {
+   font-size: 1.25rem;
+   font-weight: bold;
+}
+
+.modal-header .close-btn {
    cursor: pointer;
+   border: none;
+   outline: none;
+   background: none;
+   font-size: 1.5rem;
+   font-weight: bold;
 }
 
-.modal .title {
-   color: hsl(229, 25%, 31%);
-   font-weight: 600;
-   font-size: 35px;
+.rules {
+   padding: 10px 15px 20px;
 }
 
-.modal .content {
-   text-align: center;
-}
 
-.attribution {
-   position: absolute;
+
+#overlay {
+   position: fixed;
+   opacity: 0;
+   transition: 200ms ease-in-out;
+   top: 0;
    left: 0;
    right: 0;
-   bottom: 20px;
-   text-align: center;
+   bottom: 0;
+   background-color: rgb(0, 0, 0, .5);
+   pointer-events: none;
 }
-  
+
+#overlay.active {
+   pointer-events: all;
+   opacity: 1;
+}

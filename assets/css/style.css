@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital@0;1&family=Caveat:wght@600&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap');
 
 * {
    margin: 0;
@@ -25,6 +25,12 @@
     min-height: 100vh;
     position: relative;
     background: radial-gradient(ellipse at center, hsl(210, 6%, 93%), hsl(192, 70%, 59%));
+}
+
+h1 {
+   font-family: 'Silkscreen', cursive;
+   font-size: 46px;
+   margin-top: 20px;
 }
 
 /* Modal section */

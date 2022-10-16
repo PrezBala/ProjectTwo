@@ -33,6 +33,16 @@ h1 {
    margin-top: 20px;
 }
 
+#intro {
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 10vh;
+   text-align: center;
+}
+
 /* Modal section */
 
 .modal.active, .modal-bg.active {
@@ -72,8 +82,6 @@ h1 {
    transition: background-position .3s ease-out, color .3s ease-out;
    text-transform: uppercase;
 }
-
-
 
 
 .rules-btn:hover {
@@ -189,4 +197,20 @@ img {
 #overlay.active {
    pointer-events: all;
    opacity: 1;
+}
+
+/* For larger to medium screens size from 540px wide and down */
+@media screen and (max-width: 540px) {
+
+   #game-img {
+       gap: 0;
+       height: auto;
+   }
+   .imgChoice {
+       margin: 2px;
+   }
+   .reset-btn {
+   right: 900px;
+   bottom: 415px;
+   }
 }

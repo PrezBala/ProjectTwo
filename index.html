@@ -16,14 +16,6 @@
 </section>
 
 
-<section class="user-choice">
-  <div class="game-cardrock"><img src="/assets/images/rock.png"  alt=""></div>
-  <div class="game-cardpaper"><img src="/assets/images/paper.png"  alt=""></div>
-  <div class="game-cardscissors"><img src="/assets/images/scissors.png" alt=""></div>
-  <div class="game-cardlizard"><img src="/assets/images/lizard.png"  alt=""></div>
-  <div class="game-cardspock"><img src="/assets/images/spock.png"  alt=""></div>
-</section>
-
 <button class="rules-btn" id="btn-rules">Rules</button>
 <div id="modal" class="modal">
     <div class="modal-header">
@@ -47,6 +39,31 @@
 <div id="overlay"></div>
 <button id="reset" class="reset-btn">Reset</button>
 </div>
+<div>
+  <h2>Scores</h2>
+  <table>
+      <thead>
+        <tr>
+          <th class="score-userPc">Player</th>
+          <th class="score-userPc">Computer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="user-score">0</td>
+          <td id="pc-score">0</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+<section class="user-choice">
+  <div class="game-cardrock"><img src="/assets/images/rock.png"  alt=""></div>
+  <div class="game-cardpaper"><img src="/assets/images/paper.png"  alt=""></div>
+  <div class="game-cardscissors"><img src="/assets/images/scissors.png" alt=""></div>
+  <div class="game-cardlizard"><img src="/assets/images/lizard.png"  alt=""></div>
+  <div class="game-cardspock"><img src="/assets/images/spock.png"  alt=""></div>
+</section>
 <script src="assets/js/script.js"></script>
 
 </body>
